@@ -1,2 +1,1 @@
-CSC343-A2-TEST-SET
-==================
+CSC343 A2 Test database
