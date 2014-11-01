@@ -157,3 +157,74 @@ CREATE TABLE Query10(
 );
 
 -- SCHEMA POPULATING BEGIN
+
+-- country table
+COPY country (cid, cname, height, population) FROM stdin;
+1	The North	500	2500
+2	The Riverlands	400	3000
+3	The Vale	3000	4000
+4	The Westerlands	300	5000
+5	Iron Islands	250	1000
+6	The Crownlands	1000	8000
+7	The Reach	500	4500
+8	The Stormlands	600	2000
+9	Dorne	800	1000
+
+
+-- language table
+COPY language (cid, lid, lname, lpercentage) FROM stdin;
+
+-- data for language
+
+-- religion table
+COPY religion (cid, rid, rname, rpercentage) FROM stdin;
+-- data for religion
+
+-- hdi table
+COPY hdi (cid, year, hdi_score) FROM stdin;
+-- data
+
+-- ocean table population
+COPY ocean (oid, oname, depth) FROM stdin;
+-- data
+
+-- neighbour table population
+COPY neighbour (country, neighbor, length) FROM stdin;
+1	2	10
+1	3	100
+1	5	1000
+2	1	10
+2	3	5
+2	4	15
+2	5	500
+2	6	50
+2	7	30
+3	1	100
+3	2	5
+3	6	200
+4	2	15
+4	5	250
+4	7	150
+5	1	1000
+5	2	500
+5	4	250
+6	2	50
+6	3	200
+6	7	100
+6	8	150
+7	2	30
+7	4	150
+7	6	100
+7	8	200
+7	9	250
+8	6	150
+8	7	200
+8	9	300
+9	7	250
+9	8	300
+-- data
+
+-- country table population
+COPY oceanAccess (cid, oid) FROM stdin;
+-- data
+
