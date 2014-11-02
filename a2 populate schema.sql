@@ -1,3 +1,5 @@
+BEGIN;
+
 DROP SCHEMA IF EXISTS A2 CASCADE;
 CREATE SCHEMA A2;
 SET search_path TO A2;
@@ -28,7 +30,7 @@ DROP TABLE IF EXISTS Query10 CASCADE;
 -- 'population' is the population of the country.
 CREATE TABLE country (
     cid 		INTEGER 	PRIMARY KEY,
-    cname 		VARCHAR(20)	NOT NULL,
+    cname 		VARCHAR(200)	NOT NULL,
     height 		INTEGER 	NOT NULL,
     population	INTEGER 	NOT NULL);
     
@@ -40,7 +42,7 @@ CREATE TABLE country (
 CREATE TABLE language (
     cid 		INTEGER 	REFERENCES country(cid) ON DELETE RESTRICT,
     lid 		INTEGER 	NOT NULL,
-    lname 		VARCHAR(20) NOT NULL,
+    lname 		VARCHAR(200) NOT NULL,
     lpercentage	REAL 		NOT NULL,
 	PRIMARY KEY(cid, lid));
 
@@ -52,7 +54,7 @@ CREATE TABLE language (
 CREATE TABLE religion (
     cid 		INTEGER 	REFERENCES country(cid) ON DELETE RESTRICT,
     rid 		INTEGER 	NOT NULL,
-    rname 		VARCHAR(20) NOT NULL,
+    rname 		VARCHAR(200) NOT NULL,
     rpercentage	REAL 		NOT NULL,
 	PRIMARY KEY(cid, rid));
 
@@ -72,7 +74,7 @@ CREATE TABLE hdi (
 -- 'depth' is the depth of the deepest part of the ocean
 CREATE TABLE ocean (
     oid 		INTEGER 	PRIMARY KEY,
-    oname 		VARCHAR(20) NOT NULL,
+    oname 		VARCHAR(200) NOT NULL,
     depth 		INTEGER 	NOT NULL);
 
 -- The neighbour table provides information about the countries and their neighbours.
@@ -101,58 +103,58 @@ CREATE TABLE oceanAccess (
 
 CREATE TABLE Query1(
 	c1id	INTEGER,
-    c1name	VARCHAR(20),
+    c1name	VARCHAR(200),
 	c2id	INTEGER,
-    c2name	VARCHAR(20)
+    c2name	VARCHAR(200)
 );
 
 CREATE TABLE Query2(
 	cid		INTEGER,
-    cname	VARCHAR(20)
+    cname	VARCHAR(200)
 );
 
 CREATE TABLE Query3(
 	c1id	INTEGER,
-    c1name	VARCHAR(20),
+    c1name	VARCHAR(200),
 	c2id	INTEGER,
-    c2name	VARCHAR(20)
+    c2name	VARCHAR(200)
 );
 
 CREATE TABLE Query4(
-	cname	VARCHAR(20),
-    oname	VARCHAR(20)
+	cname	VARCHAR(200),
+    oname	VARCHAR(200)
 );
 
 CREATE TABLE Query5(
 	cid		INTEGER,
-    cname	VARCHAR(20),
+    cname	VARCHAR(200),
 	avghdi	REAL
 );
 
 CREATE TABLE Query6(
 	cid		INTEGER,
-    cname	VARCHAR(20)
+    cname	VARCHAR(200)
 );
 
 CREATE TABLE Query7(
 	rid			INTEGER,
-    rname		VARCHAR(20),
+    rname		VARCHAR(200),
 	followers	INTEGER
 );
 
 CREATE TABLE Query8(
-	c1name	VARCHAR(20),
-    c2name	VARCHAR(20),
-	lname	VARCHAR(20)
+	c1name	VARCHAR(200),
+    c2name	VARCHAR(200),
+	lname	VARCHAR(200)
 );
 
 CREATE TABLE Query9(
-    cname		VARCHAR(20),
+    cname		VARCHAR(200),
 	totalspan	INTEGER
 );
 
 CREATE TABLE Query10(
-    cname			VARCHAR(20),
+    cname			VARCHAR(200),
 	borderslength	INTEGER
 );
 
@@ -169,7 +171,7 @@ COPY country (cid, cname, height, population) FROM stdin;
 7	The Reach	500	4500
 8	The Stormlands	600	2000
 9	Dorne	800	1000
-
+\.
 
 -- language table
 COPY language (cid, lid, lname, lpercentage) FROM stdin;
@@ -182,7 +184,7 @@ COPY language (cid, lid, lname, lpercentage) FROM stdin;
 7	1	Common Tongue	100
 8	1	Common Tongue	100
 9	1	Common Tongue	100
-
+\.
 -- religion table
 COPY religion (cid, rid, rname, rpercentage) FROM stdin;
 1	1	Faith of the Seven	20
@@ -198,6 +200,7 @@ COPY religion (cid, rid, rname, rpercentage) FROM stdin;
 7	1	Faith of the Seven	100
 8	1	Faith of the Seven	100
 9	1	Faith of the Seven	100
+\.
 
 -- hdi table
 COPY hdi (cid, year, hdi_score) FROM stdin;
@@ -228,7 +231,7 @@ COPY hdi (cid, year, hdi_score) FROM stdin;
 7	100	14
 8	100	64
 9	100	6
--- data
+\.
 
 -- ocean table population
 COPY ocean (oid, oname, depth) FROM stdin;
@@ -236,6 +239,7 @@ COPY ocean (oid, oname, depth) FROM stdin;
 2	Shivering Sea	10000
 3	Sunset Sea	3000
 4	Summer Sea	5000
+\.
 
 -- neighbour table population
 COPY neighbour (country, neighbor, length) FROM stdin;
@@ -271,6 +275,7 @@ COPY neighbour (country, neighbor, length) FROM stdin;
 8	9	300
 9	7	250
 9	8	300
+\.
 
 -- country table population
 COPY oceanAccess (cid, oid) FROM stdin;
@@ -287,3 +292,5 @@ COPY oceanAccess (cid, oid) FROM stdin;
 8	1
 9	1
 9	4
+\.
+COMMIT;
