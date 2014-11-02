@@ -173,20 +173,69 @@ COPY country (cid, cname, height, population) FROM stdin;
 
 -- language table
 COPY language (cid, lid, lname, lpercentage) FROM stdin;
-
--- data for language
+1	1	Common Tongue	100
+2	1	Common Tongue	100
+3	1	Common Tongue	100
+4	1	Common Tongue	100
+5	1	Common Tongue	100
+6	1	Common Tongue	100
+7	1	Common Tongue	100
+8	1	Common Tongue	100
+9	1	Common Tongue	100
 
 -- religion table
 COPY religion (cid, rid, rname, rpercentage) FROM stdin;
--- data for religion
+1	1	Faith of the Seven	20
+1	2	Old Gods of the Forest	80
+2	1	Faith of the Seven	75
+2	2	Old Gods of the Forest	25
+3	1	Faith of the Seven	85
+3	2	Old Gods of the Forest	15
+4	1	Faith of the Seven	100
+5	3	Drowned Gods	85
+5	1	Faith of the Seven	15
+6	1	Faith of the Seven	100
+7	1	Faith of the Seven	100
+8	1	Faith of the Seven	100
+9	1	Faith of the Seven	100
 
 -- hdi table
 COPY hdi (cid, year, hdi_score) FROM stdin;
+1	15	23
+2	15	11
+3	15	3
+4	15	45
+5	15	68
+6	15	62
+7	15	87
+8	15	56
+9	15	14
+1	35	96
+2	35	23
+3	35	76
+4	35	35
+5	35	13
+6	35	99
+7	35	60
+8	35	35
+9	35	63
+1	100	66
+2	100	15
+3	100	10
+4	100	31
+5	100	10
+6	100	82
+7	100	14
+8	100	64
+9	100	6
 -- data
 
 -- ocean table population
 COPY ocean (oid, oname, depth) FROM stdin;
--- data
+1	Narrow Sea	5000
+2	Shivering Sea	10000
+3	Sunset Sea	3000
+4	Summer Sea	5000
 
 -- neighbour table population
 COPY neighbour (country, neighbor, length) FROM stdin;
@@ -222,9 +271,19 @@ COPY neighbour (country, neighbor, length) FROM stdin;
 8	9	300
 9	7	250
 9	8	300
--- data
 
 -- country table population
 COPY oceanAccess (cid, oid) FROM stdin;
--- data
-
+1	2
+1	3
+2	3
+3	1
+3	2
+4	3
+5	3
+6	1
+7	3
+7	4
+8	1
+9	1
+9	4
