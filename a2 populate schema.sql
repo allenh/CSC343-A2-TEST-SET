@@ -175,14 +175,20 @@ COPY country (cid, cname, height, population) FROM stdin;
 
 -- language table
 COPY language (cid, lid, lname, lpercentage) FROM stdin;
-1	1	Common Tongue	100
-2	1	Common Tongue	100
-3	1	Common Tongue	100
-4	1	Common Tongue	100
-5	1	Common Tongue	100
+1	1	Common Tongue	65
+1	2	Valyrian	35
+2	1	Common Tongue	45
+2	2	Valyrian	45
+2	3	Dothraki	10
+3	1	Common Tongue	20
+3	2	Valyrian	80
+4	1	Common Tongue	30
+4	5	Lhazar	70
+5	5	Lhazar	100
 6	1	Common Tongue	100
-7	1	Common Tongue	100
-8	1	Common Tongue	100
+7	1	Common Tongue	90
+7	4	Asshai	90
+8	4	Asshai	100
 9	1	Common Tongue	100
 \.
 -- religion table
