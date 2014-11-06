@@ -3,7 +3,7 @@ This is a set of SQL commands used to test CSC343 Assignment 2 queries at the Un
 
 ###Set Up:
 1. In CDF under the directory with the sql file switch to ```psql```
-2. Run ```\i a2 populate schema.sql```
+2. Run ```\i a2 'populate schema.sql'```
 
 ###Note:
 1. The size for every ```VARCHAR``` column is change from 20 to 200
