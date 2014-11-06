@@ -181,37 +181,37 @@ COPY country (cid, cname, height, population) FROM stdin;
 
 -- language table
 COPY language (cid, lid, lname, lpercentage) FROM stdin;
-1	1	Common Tongue	65
-1	2	Valyrian	35
-2	1	Common Tongue	45
-2	2	Valyrian	45
-2	3	Dothraki	10
-3	1	Common Tongue	20
-3	2	Valyrian	80
-4	1	Common Tongue	30
-4	5	Lhazar	70
-5	5	Lhazar	100
-6	1	Common Tongue	100
-7	1	Common Tongue	90
-7	4	Asshai	90
-8	4	Asshai	100
-9	1	Common Tongue	100
+1	1	Common Tongue	0.65
+1	2	Valyrian	0.35
+2	1	Common Tongue	0.45
+2	2	Valyrian	0.45
+2	3	Dothraki	0.10
+3	1	Common Tongue	0.20
+3	2	Valyrian	0.80
+4	1	Common Tongue	0.30
+4	5	Lhazar	0.70
+5	5	Lhazar	1
+6	1	Common Tongue	1
+7	1	Common Tongue	0.90
+7	4	Asshai	0.90
+8	4	Asshai	1
+9	1	Common Tongue	0.100
 \.
 -- religion table
 COPY religion (cid, rid, rname, rpercentage) FROM stdin;
-1	1	Faith of the Seven	20
-1	2	Old Gods of the Forest	80
-2	1	Faith of the Seven	75
-2	2	Old Gods of the Forest	25
-3	1	Faith of the Seven	85
-3	2	Old Gods of the Forest	15
-4	1	Faith of the Seven	100
-5	3	Drowned Gods	85
-5	1	Faith of the Seven	15
-6	1	Faith of the Seven	100
-7	1	Faith of the Seven	100
-8	1	Faith of the Seven	100
-9	1	Faith of the Seven	100
+1	1	Faith of the Seven	0.20
+1	2	Old Gods of the Forest	0.80
+2	1	Faith of the Seven	0.75
+2	2	Old Gods of the Forest	0.25
+3	1	Faith of the Seven	0.85
+3	2	Old Gods of the Forest	0.15
+4	1	Faith of the Seven	1
+5	3	Drowned Gods	0.85
+5	1	Faith of the Seven	0.15
+6	1	Faith of the Seven	1
+7	1	Faith of the Seven	1
+8	1	Faith of the Seven	1
+9	1	Faith of the Seven	1
 \.
 
 -- hdi table
