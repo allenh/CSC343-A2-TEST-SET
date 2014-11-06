@@ -171,6 +171,12 @@ COPY country (cid, cname, height, population) FROM stdin;
 7	The Reach	500	4500
 8	The Stormlands	600	2000
 9	Dorne	800	1000
+10	Italy	100	100
+11	Vantican City	100	200
+12	Germany	100	200
+13	Austria	100	300
+14	France	100	200
+15	Switzerland	200	300
 \.
 
 -- language table
@@ -290,6 +296,10 @@ COPY ocean (oid, oname, depth) FROM stdin;
 2	Shivering Sea	10000
 3	Sunset Sea	3000
 4	Summer Sea	5000
+5	Adratic Sea	100
+6	Tyrrhenian Sea	200
+7	North Sea	200
+8	Bay of Biscary	300
 \.
 
 -- neighbour table population
@@ -326,6 +336,20 @@ COPY neighbour (country, neighbor, length) FROM stdin;
 8	9	300
 9	7	250
 9	8	300
+10	11	100
+10	15	100
+11	10	100
+12	13	200
+12	14	50
+12	15	100
+13	12	200
+13	15	50
+14	12	50
+14	15	100
+15	10	100
+15	12	100
+15	13	50
+15	14	100
 \.
 
 -- country table population
@@ -343,5 +367,10 @@ COPY oceanAccess (cid, oid) FROM stdin;
 8	1
 9	1
 9	4
+10	5
+10	6
+12	7
+14	7
+14	8
 \.
 COMMIT;
